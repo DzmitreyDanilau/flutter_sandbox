@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_sandbox/ui/home/widgets/genres/genres_widget.dart';
 import 'package:flutter_sandbox/ui/home/widgets/header_title.dart';
 
-import '../widgets/category/categories_list_widget.dart';
-import '../widgets/category/categories_widget.dart';
 
 class HomeLayout extends StatelessWidget {
 

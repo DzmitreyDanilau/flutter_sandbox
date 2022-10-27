@@ -24,3 +24,5 @@ class Genre {
 
   factory Genre.fromJson(Map<String, dynamic> json) => _$GenreFromJson(json);
 }
+
+

@@ -1,11 +1,11 @@
 // ignore: depend_on_referenced_packages
 import 'package:equatable/equatable.dart';
-import 'package:flutter_sandbox/ui/home/widgets/category/bloc/category_status.dart';
+import 'package:flutter_sandbox/ui/home/widgets/genres/bloc/genres_status.dart';
 
 import '../../../../../models/genre.dart';
 
-class CategoriesListState extends Equatable {
-  const CategoriesListState(
+class GenresListState extends Equatable {
+  const GenresListState(
       {this.status = GenreStatus.initial,
       List<Genre>? genres,
       this.selectedItemId = 0})
@@ -18,9 +18,9 @@ class CategoriesListState extends Equatable {
   @override
   List<Object> get props => [status, genres, selectedItemId];
 
-  CategoriesListState copyWith(
+  GenresListState copyWith(
       {List<Genre>? categories, GenreStatus? status, int? selectedItemId}) {
-    return CategoriesListState(
+    return GenresListState(
       genres: categories ?? genres,
       status: status ?? this.status,
       selectedItemId: selectedItemId ?? this.selectedItemId,

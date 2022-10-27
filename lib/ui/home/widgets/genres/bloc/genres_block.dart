@@ -1,25 +1,25 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_sandbox/repositories/repository.dart';
-import 'package:flutter_sandbox/ui/home/widgets/category/bloc/category_event.dart';
-import 'package:flutter_sandbox/ui/home/widgets/category/bloc/categories_list_state.dart';
+import 'package:flutter_sandbox/ui/home/widgets/genres/bloc/genres_event.dart';
+import 'package:flutter_sandbox/ui/home/widgets/genres/bloc/genres_list_state.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../../../../di/app_module.dart';
-import 'category_status.dart';
+import 'genres_status.dart';
 
 @injectable
-class CategoryBloc extends Bloc<CategoryEvent, CategoriesListState> {
-  CategoryBloc() : super(const CategoriesListState()) {
-    on<GetCategories>(_mapGetCategoriesEventToState);
+class GenresBloc extends Bloc<GenresEvent, GenresListState> {
+  GenresBloc() : super(const GenresListState()) {
+    on<GetCategories>(_mapGetGenresEventToState);
   }
 
   final GameRepository repository = getIt<GameRepository>();
 
-  void _mapGetCategoriesEventToState(
-      GetCategories event, Emitter<CategoriesListState> emit) async {
+  void _mapGetGenresEventToState(
+      GetCategories event, Emitter<GenresListState> emit) async {
     emit(state.copyWith(status: GenreStatus.loading));
     try {
-      final genres = await repository.getGenres() ?? List.empty();
+      final genres = await repository.getGenres();
       emit(
         state.copyWith(
           status: GenreStatus.success,

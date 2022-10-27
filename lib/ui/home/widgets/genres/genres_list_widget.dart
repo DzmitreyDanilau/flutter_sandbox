@@ -1,16 +1,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_sandbox/ui/home/widgets/category/bloc/categories_list_state.dart';
-import 'package:flutter_sandbox/ui/home/widgets/category/bloc/category_block.dart';
-import 'package:flutter_sandbox/ui/home/widgets/category/bloc/category_status.dart';
-import 'package:flutter_sandbox/ui/home/widgets/category/categoryItem.dart';
+import 'package:flutter_sandbox/ui/home/widgets/genres/bloc/genres_block.dart';
+import 'package:flutter_sandbox/ui/home/widgets/genres/bloc/genres_list_state.dart';
+import 'package:flutter_sandbox/ui/home/widgets/genres/bloc/genres_status.dart';
+import 'package:flutter_sandbox/ui/home/widgets/genres/genres_item.dart';
 
 class CategoriesListWidget extends StatelessWidget {
   const CategoriesListWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CategoryBloc, CategoriesListState>(
+    return BlocBuilder<GenresBloc, GenresListState>(
         buildWhen: (previous, current) => current.status.isSuccess,
         builder: (context, state) {
           return SizedBox(

@@ -2,9 +2,9 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_sandbox/models/genre.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_sandbox/ui/home/widgets/category/bloc/categories_list_state.dart';
-import 'package:flutter_sandbox/ui/home/widgets/category/bloc/category_block.dart';
-import 'package:flutter_sandbox/ui/home/widgets/category/bloc/category_status.dart';
+import 'package:flutter_sandbox/ui/home/widgets/genres/bloc/genres_block.dart';
+import 'package:flutter_sandbox/ui/home/widgets/genres/bloc/genres_list_state.dart';
+import 'package:flutter_sandbox/ui/home/widgets/genres/bloc/genres_status.dart';
 
 typedef GenreClicked = Function(Genre genreSelected);
 
@@ -22,7 +22,7 @@ class CategoryItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => clickListener(genre),
-      child: BlocSelector<CategoryBloc, CategoriesListState, bool>(
+      child: BlocSelector<GenresBloc, GenresListState, bool>(
         selector: (state) =>
         (state.status.isSelected && state.selectedItemId == genre.id)
             ? true
