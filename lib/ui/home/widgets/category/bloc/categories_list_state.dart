@@ -8,9 +8,8 @@ class CategoriesListState extends Equatable {
   const CategoriesListState(
       {this.status = GenreStatus.initial,
       List<Genre>? genres,
-      int selectedItemId = 0})
-      : genres = genres ?? const [],
-        selectedItemId = selectedItemId;
+      this.selectedItemId = 0})
+      : genres = genres ?? const [];
 
   final List<Genre> genres;
   final GenreStatus status;
@@ -22,7 +21,7 @@ class CategoriesListState extends Equatable {
   CategoriesListState copyWith(
       {List<Genre>? categories, GenreStatus? status, int? selectedItemId}) {
     return CategoriesListState(
-      genres: categories ?? this.genres,
+      genres: categories ?? genres,
       status: status ?? this.status,
       selectedItemId: selectedItemId ?? this.selectedItemId,
     );

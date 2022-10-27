@@ -5,16 +5,20 @@ import 'package:flutter_sandbox/ui/home/widgets/category/bloc/category_block.dar
 import 'package:flutter_sandbox/ui/home/widgets/category/bloc/category_status.dart';
 import 'package:flutter_sandbox/ui/home/widgets/category/categories_list_widget.dart';
 
+import 'bloc/category_event.dart';
+
 class CategoriesWidget extends StatelessWidget {
   const CategoriesWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CategoryBloc, CategoriesListState>(
-      buildWhen: (previous, current) => current.status.isSuccess,
-      builder: (context, state) {
-        return const CategoriesListWidget();
-      },
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<CategoryBloc>(
+          create: (BuildContext context) => CategoryBloc()..add(GetCategories()),
+        ),
+      ],
+      child: const CategoriesListWidget(),
     );
   }
-  }
+}

@@ -46,6 +46,7 @@ dev_dependencies:
   flutter_bloc: ^8.0.0
   injectable_generator: ^1.5.3
   dio: ^4.0.6
+  dio_logging_interceptor: ^1.0.1
   build_runner: ^2.1.5
   flutter_test:
     sdk: flutter

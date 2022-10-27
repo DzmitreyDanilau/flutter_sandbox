@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 
 import '../models/genre.dart';
 
-@injectable
+@lazySingleton
 class GameRepository {
   const GameRepository({required this.service});
 
