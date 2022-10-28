@@ -15,8 +15,8 @@ class HomeLayout extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: const [
           HeaderTitle(),
-          SizedBox(height: 40.0),
-          CategoriesWidget()
+          SizedBox(height: 80.0),
+          GenresWidget()
         ],
       ),
     );

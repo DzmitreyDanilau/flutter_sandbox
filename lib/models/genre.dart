@@ -1,5 +1,7 @@
 import 'package:json_annotation/json_annotation.dart';
 
+import 'game.dart';
+
 part 'genre.g.dart';
 
 @JsonSerializable()
@@ -12,6 +14,7 @@ class Genre {
     this.imageBackground,
     this.domain,
     this.language,
+    this.gamesList,
   });
 
   final int id;
@@ -21,6 +24,7 @@ class Genre {
   final String? imageBackground;
   final String? domain;
   final String? language;
+  final List<Game>? gamesList;
 
   factory Genre.fromJson(Map<String, dynamic> json) => _$GenreFromJson(json);
 }

@@ -5,8 +5,8 @@ import 'package:flutter_sandbox/ui/home/widgets/genres/genres_list_widget.dart';
 
 import 'bloc/genres_event.dart';
 
-class CategoriesWidget extends StatelessWidget {
-  const CategoriesWidget({super.key});
+class GenresWidget extends StatelessWidget {
+  const GenresWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +16,7 @@ class CategoriesWidget extends StatelessWidget {
           create: (BuildContext context) => GenresBloc()..add(GetCategories()),
         ),
       ],
-      child: const CategoriesListWidget(),
+      child: const GenresListWidget(),
     );
   }
 }
