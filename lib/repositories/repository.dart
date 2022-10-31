@@ -9,5 +9,8 @@ class GameRepository {
 
   final GameService service;
 
-  Future<List<Genre>?> getGenres() async => service.getGenres();
+  Future<List<Genre>?> getGenres() async {
+    var response = await service.getGenres();
+    return response.genres;
+  }
 }

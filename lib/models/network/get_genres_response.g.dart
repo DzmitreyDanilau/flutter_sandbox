@@ -1,12 +1,13 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'response.dart';
+part of 'get_genres_response.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-Response _$ResponseFromJson(Map<String, dynamic> json) => Response(
+GetGenresResponse _$GetGenresResponseFromJson(Map<String, dynamic> json) =>
+    GetGenresResponse(
       count: json['count'] as int?,
       next: json['next'] as String?,
       previous: json['previous'] as String?,
@@ -15,7 +16,8 @@ Response _$ResponseFromJson(Map<String, dynamic> json) => Response(
           .toList(),
     );
 
-Map<String, dynamic> _$ResponseToJson(Response instance) => <String, dynamic>{
+Map<String, dynamic> _$GetGenresResponseToJson(GetGenresResponse instance) =>
+    <String, dynamic>{
       'count': instance.count,
       'next': instance.next,
       'previous': instance.previous,

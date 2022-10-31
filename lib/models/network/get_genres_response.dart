@@ -1,12 +1,13 @@
-import 'package:flutter_sandbox/models/genre.dart';
 import 'package:json_annotation/json_annotation.dart';
 
-part 'response.g.dart';
+import '../genre.dart';
+
+part 'get_genres_response.g.dart';
 
 
 @JsonSerializable()
-class Response {
-  Response({
+class GetGenresResponse {
+  GetGenresResponse({
     this.count,
     this.next,
     this.previous,
@@ -19,6 +20,6 @@ class Response {
   @JsonKey(name: 'results')
   final List<Genre>? genres;
 
-  factory Response.fromJson(Map<String, dynamic> json) => _$ResponseFromJson(json);
-
+  factory GetGenresResponse.fromJson(Map<String, dynamic> json) =>
+      _$GetGenresResponseFromJson(json);
 }

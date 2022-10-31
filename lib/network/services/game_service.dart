@@ -1,4 +1,4 @@
-import 'package:flutter_sandbox/models/response.dart';
+import 'package:flutter_sandbox/models/network/get_genres_response.dart';
 import 'package:flutter_sandbox/network/api.dart';
 import 'package:injectable/injectable.dart';
 
@@ -11,10 +11,10 @@ class GameService {
 
   GameService(this._service);
 
-  Future<List<Genre>?> getGenres() async {
+  Future<GetGenresResponse> getGenres() async {
     var response =
         await _service.dio.get('/genres?key=$API_KEY');
 
-   return Response.fromJson(response.data).genres;
+   return GetGenresResponse.fromJson(response.data);
   }
 }

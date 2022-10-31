@@ -6,17 +6,18 @@ part of 'genre.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Genre _$GenreFromJson(Map<String, dynamic> json) {
-    return  Genre(
-            id: json['id'] as int,
-            name: json['name'] as String?,
-            slug: json['slug'] as String?,
-            gamesCount: json['gamesCount'] as int?,
-            imageBackground: json['imageBackground'] as String?,
-            domain: json['domain'] as String?,
-            language: json['language'] as String?,
-      );
-}
+Genre _$GenreFromJson(Map<String, dynamic> json) => Genre(
+      id: json['id'] as int,
+      name: json['name'] as String?,
+      slug: json['slug'] as String?,
+      gamesCount: json['gamesCount'] as int?,
+      imageBackground: json['imageBackground'] as String?,
+      domain: json['domain'] as String?,
+      language: json['language'] as String?,
+      gamesList: (json['gamesList'] as List<dynamic>?)
+          ?.map((e) => Game.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
 
 Map<String, dynamic> _$GenreToJson(Genre instance) => <String, dynamic>{
       'id': instance.id,
@@ -26,4 +27,5 @@ Map<String, dynamic> _$GenreToJson(Genre instance) => <String, dynamic>{
       'imageBackground': instance.imageBackground,
       'domain': instance.domain,
       'language': instance.language,
+      'gamesList': instance.gamesList,
     };

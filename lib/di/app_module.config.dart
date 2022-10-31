@@ -10,7 +10,8 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import '../network/api.dart' as _i3;
 import '../network/services/game_service.dart' as _i4;
-import '../repositories/repository.dart' as _i6;
+import '../repositories/repository.dart' as _i7;
+import '../ui/home/widgets/games/bloc/games_list_bloc.dart' as _i6;
 import '../ui/home/widgets/genres/bloc/genres_block.dart'
     as _i5; // ignore_for_file: unnecessary_lambdas
 
@@ -30,7 +31,8 @@ _i1.GetIt $initGetIt(
   gh.lazySingleton<_i4.GameService>(
       () => _i4.GameService(get<_i3.ApiService>()));
   gh.factory<_i5.GenresBloc>(() => _i5.GenresBloc());
-  gh.lazySingleton<_i6.GameRepository>(
-      () => _i6.GameRepository(service: get<_i4.GameService>()));
+  gh.factory<_i6.GetAllGamesBloc>(() => _i6.GetAllGamesBloc());
+  gh.lazySingleton<_i7.GameRepository>(
+      () => _i7.GameRepository(service: get<_i4.GameService>()));
   return get;
 }
