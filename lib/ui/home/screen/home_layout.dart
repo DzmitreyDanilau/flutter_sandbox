@@ -1,10 +1,9 @@
 import 'package:flutter/cupertino.dart';
+import 'package:flutter_sandbox/ui/home/widgets/games/all_games.dart';
 import 'package:flutter_sandbox/ui/home/widgets/genres/genres_widget.dart';
 import 'package:flutter_sandbox/ui/home/widgets/header_title.dart';
 
-
 class HomeLayout extends StatelessWidget {
-
   const HomeLayout({super.key});
 
   @override
@@ -16,7 +15,12 @@ class HomeLayout extends StatelessWidget {
         children: const [
           HeaderTitle(),
           SizedBox(height: 80.0),
-          GenresWidget()
+          GenresWidget(),
+          SizedBox(height: 80.0),
+          AllGameWidget(
+            title: 'Title',
+            gamesList: ['asdasd', 'easdsad', 'dsdasd'],
+          )
         ],
       ),
     );

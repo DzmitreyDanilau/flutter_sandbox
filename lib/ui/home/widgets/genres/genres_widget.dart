@@ -10,12 +10,8 @@ class GenresWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocProvider(
-      providers: [
-        BlocProvider<GenresBloc>(
-          create: (BuildContext context) => GenresBloc()..add(GetCategories()),
-        ),
-      ],
+    return BlocProvider<GenresBloc>(
+      create: (BuildContext context) => GenresBloc()..add(GetCategories()),
       child: const GenresListWidget(),
     );
   }
