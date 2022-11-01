@@ -4,8 +4,6 @@ import 'package:flutter_sandbox/ui/home/widgets/games/bloc/games_all_games_state
 import 'package:flutter_sandbox/ui/home/widgets/games/bloc/games_list_bloc.dart';
 import 'package:flutter_sandbox/ui/home/widgets/games/game_item_widget.dart';
 
-import '../../../../models/game.dart';
-
 class AllGameWidget extends StatelessWidget {
   const AllGameWidget({Key? key, required this.title, required this.gamesList})
       : super(key: key);
@@ -21,18 +19,29 @@ class AllGameWidget extends StatelessWidget {
           children: [
             const Padding(
               padding: EdgeInsets.only(left: 24.0),
-              child: Text('All Games',
-                  style:
-                      TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0)),
+              child: Text(
+                'All Games',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18.0),
+              ),
             ),
-            ListView.separated(
-              itemBuilder: (context, index) => const GameItemWidget(
-                  imageUrl:'https://cdn2.myminifactory.com/assets/object-assets/5f435a90d22ba/images/720X720-viper-avatar.jpg',
+            SizedBox(
+              child: ListView.separated(
+                physics: const NeverScrollableScrollPhysics(),
+                padding: const EdgeInsets.only(
+                  left: 24.0,
+                  right: 24.0,
+                  top: 24.0,
+                ),
+                shrinkWrap: true,
+                itemBuilder: (context, index) => const GameItemWidget(
+                  imageUrl:
+                      'https://cdn2.myminifactory.com/assets/object-assets/5f435a90d22ba/images/720X720-viper-avatar.jpg',
                   gameTitle: 'Game Title',
                 ),
-              separatorBuilder: (_, __) => const SizedBox(width: 16.0),
-              itemCount: gamesList.length,
-            )
+                separatorBuilder: (_, __) => const SizedBox(width: 16.0),
+                itemCount: 10,
+              ),
+            ),
           ],
         );
       },

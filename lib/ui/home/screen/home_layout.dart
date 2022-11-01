@@ -3,6 +3,8 @@ import 'package:flutter_sandbox/ui/home/widgets/games/all_games.dart';
 import 'package:flutter_sandbox/ui/home/widgets/genres/genres_widget.dart';
 import 'package:flutter_sandbox/ui/home/widgets/header_title.dart';
 
+import '../container_body.dart';
+
 class HomeLayout extends StatelessWidget {
   const HomeLayout({super.key});
 
@@ -15,12 +17,13 @@ class HomeLayout extends StatelessWidget {
         children: const [
           HeaderTitle(),
           SizedBox(height: 80.0),
-          GenresWidget(),
-          SizedBox(height: 80.0),
-          AllGameWidget(
-            title: 'Title',
-            gamesList: ['asdasd', 'easdsad', 'dsdasd'],
-          )
+          ContainerBody(children: [
+            GenresWidget(),
+            AllGameWidget(
+              title: 'Title',
+              gamesList: ['asdasd', 'easdsad', 'dsdasd'],
+            ),
+          ])
         ],
       ),
     );

@@ -10,7 +10,8 @@ class GameItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => SizedBox(
-      width: 80,
+      width: 200,
+      height: 200,
       child: Card(
           child: Image.network(imageUrl)
       ),
